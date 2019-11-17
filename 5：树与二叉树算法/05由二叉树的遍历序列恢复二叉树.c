@@ -1,4 +1,4 @@
-//ÓÉ¶þ²æÊ÷µÄ±éÀúÐòÁÐ»Ö¸´¶þ²æÊ÷
+//ç”±äºŒå‰æ ‘çš„éåŽ†åºåˆ—æ¢å¤äºŒå‰æ ‘
 #include<stdio.h>
 #include<stdlib.h>
 #define MAXSIZE 30
@@ -29,22 +29,21 @@ void Inorder(BSTree *p)
 }
 
 void Pre_In_order(char pre[],char ind[],int i,int j,int k,int h,BSTree **p)
-{//i¡¢jºÍk¡¢h·Ö±ðÎªµ±Ç°×ÓÊ÷ÏÈÐòÐòÁÐºÍÖÐÐòÐòÁÐµÄÏÂ¡¢ÉÏ½ç 
+{//iã€jå’Œkã€håˆ†åˆ«ä¸ºå½“å‰å­æ ‘å…ˆåºåºåˆ—å’Œä¸­åºåºåˆ—çš„ä¸‹ã€ä¸Šç•Œ 
 	int m;
 	*p=(BSTree*)malloc(sizeof(BSTree));
 	(*p)->data=pred[i];
-	(*p)->data=pred[i];
-	m=k;//mÖ¸ÏòindÊý×éËù´æ´¢µÄÖÐÐòÐòÁÐÖÐµÄµÚÒ»¸ö½áµã 
-	while(ind[m]!=pred[i])//ÕÒµ½¸ù½áµãÔÚÖÐÐòÐòÁÐËùÔÚµÄÎ»ÖÃ 
+	m=k;//mæŒ‡å‘indæ•°ç»„æ‰€å­˜å‚¨çš„ä¸­åºåºåˆ—ä¸­çš„ç¬¬ä¸€ä¸ªç»“ç‚¹ 
+	while(ind[m]!=pred[i])//æ‰¾åˆ°æ ¹ç»“ç‚¹åœ¨ä¸­åºåºåˆ—æ‰€åœ¨çš„ä½ç½® 
 	   m++;
-	if(m==k)//¸ù½áµãÊÇÖÐÐòÐòÁÐµÄµÚÒ»¸ö½áµãÊ±ÔòÎÞ×ó×ÓÊ÷ 
+	if(m==k)//æ ¹ç»“ç‚¹æ˜¯ä¸­åºåºåˆ—çš„ç¬¬ä¸€ä¸ªç»“ç‚¹æ—¶åˆ™æ— å·¦å­æ ‘ 
 	  (*p)->lchild=NULL;
 	else
-	  Pre_In_order(pred,ind,i+1,i+m-k,k,m-1,&(*p)->lchild);//¸ù¾Ý¸ù½áµãËù»®·Ö³öÖÐÐòÐòÁÐµÄÁ½¸ö²¿·Ö¼ÌÐø¹¹Ôì×ó¡¢ÓÒÁ½¿Ã×ÓÊ÷ 
-	if(m==h)//¸ù½áµãÊÇÖÐÐòÐòÁÐµÄ×îºóÒ»¸ö½áµãÊ±ÔòÎÞÓÒ×ÓÊ÷
+	  Pre_In_order(pred,ind,i+1,i+m-k,k,m-1,&(*p)->lchild);//æ ¹æ®æ ¹ç»“ç‚¹æ‰€åˆ’åˆ†å‡ºä¸­åºåºåˆ—çš„ä¸¤ä¸ªéƒ¨åˆ†ç»§ç»­æž„é€ å·¦ã€å³ä¸¤æ£µå­æ ‘ 
+	if(m==h)//æ ¹ç»“ç‚¹æ˜¯ä¸­åºåºåˆ—çš„æœ€åŽä¸€ä¸ªç»“ç‚¹æ—¶åˆ™æ— å³å­æ ‘
 	  (*p)->rchild=NULL;
 	else
-	  Pre_In_order(pred,ind,i+m-k+1,j,m+1,h,&(*p)->rchild);//¸ù¾Ý¸ù½áµãËù»®·Ö³öÖÐÐòÐòÁÐµÄÁ½¸ö²¿·Ö¼ÌÐø¹¹Ôì×ó¡¢ÓÒÁ½¿Ã×ÓÊ÷ 
+	  Pre_In_order(pred,ind,i+m-k+1,j,m+1,h,&(*p)->rchild);//æ ¹æ®æ ¹ç»“ç‚¹æ‰€åˆ’åˆ†å‡ºä¸­åºåºåˆ—çš„ä¸¤ä¸ªéƒ¨åˆ†ç»§ç»­æž„é€ å·¦ã€å³ä¸¤æ£µå­æ ‘ 
 }
 
 void Print_Inorder(BSTree *p)
