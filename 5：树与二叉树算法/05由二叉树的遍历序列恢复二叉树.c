@@ -28,7 +28,7 @@ void Inorder(BSTree *p)
 	}
 }
 
-void Pre_In_order(char pre[],char ind[],int i,int j,int k,int h,BSTree **p)
+void Pre_In_order(char pred[],char ind[],int i,int j,int k,int h,BSTree **p)
 {//i、j和k、h分别为当前子树先序序列和中序序列的下、上界 
 	int m;
 	*p=(BSTree*)malloc(sizeof(BSTree));
